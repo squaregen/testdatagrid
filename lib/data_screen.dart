@@ -1,8 +1,6 @@
 import 'dart:async';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
-
 import 'employe.dart';
 import 'employee_datasource.dart';
 
@@ -54,7 +52,6 @@ class DataScreenState extends State<DataScreen>
   Widget _grid() {
     return SfDataGrid(
           key: _sfGridKey,
-          //rowsCacheExtent: source!.list.length,
           controller: gridController,
           frozenColumnsCount: 1,
           frozenRowsCount: 0,
