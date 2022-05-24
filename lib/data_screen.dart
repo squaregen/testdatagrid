@@ -29,6 +29,7 @@ class DataScreenState extends State<DataScreen>
     super.initState();
     _employees = getEmployeeData();
     _employeeDataSource = EmployeeDataSource(employees: _employees);
+    gridController = DataGridController();
   }
 
 
@@ -39,13 +40,24 @@ class DataScreenState extends State<DataScreen>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    gridController = DataGridController();
+
 
 
 
     return  Scaffold(
-            appBar: AppBar(title: Text("Datagrid checkbox test"),),
+            appBar: AppBar(title: const Text("Datagrid checkbox test"),),
             body: _grid(),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.clear),
+        onPressed: (){
+        setState((){
+
+
+              gridController?.selectedRows = [];
+
+
+        });
+      },),
             );
   }
 
